@@ -1,6 +1,6 @@
 #!/usr/bin/env node
-import random from './brain-even.js';
 
+import calc from './brain-calc.js';
 console.log('Welcome to the Brain Games!');
 
-random();
+calc();
