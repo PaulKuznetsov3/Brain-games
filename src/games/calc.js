@@ -1,5 +1,5 @@
 const calc = () => {
-  const descr = 'What is the result of the expression?';
+  console.log('What is the result of the expression?');
   for (let i = 0; i < 3; i += 1) {
     const operators = ['+', '-', '*'];
     const oper = operators[Math.floor(Math.random() * 3)];
