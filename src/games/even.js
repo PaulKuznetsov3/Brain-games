@@ -1,5 +1,5 @@
-const random = () => {
-  const descr = 'Answer "yes" if the number is even, otherwise answer "no"';
+const even = () => {
+  console.log('Answer "yes" if the number is even, otherwise answer "no"');
   for (let i = 0; i < 3; i += 1) {
     let number = 0;
     number = Math.round(Math.random() * 100);
@@ -25,4 +25,4 @@ const random = () => {
   }
   console.log(`Congratulations, ${userName}`);
 };
-export default random();
+export default even();

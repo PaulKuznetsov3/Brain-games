@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 import readlineSync from 'readline-sync';
 
-const random = () => {
+const even = () => {
   console.log('Welcome to the Brain Games!');
   const userName = readlineSync.question('May I have your name? ');
   console.log(`Hallo, ${userName}!`);
@@ -31,4 +31,4 @@ const random = () => {
   }
   console.log(`Congratulations, ${userName}`);
 };
-random();
+even();

@@ -1,10 +1,4 @@
-#!/usr/bin/env node
-import readlineSync from 'readline-sync';
-
 const progression = () => {
-  console.log('Welcome to the Brain Games!');
-  const userName = readlineSync.question('May I have your name? ');
-  console.log(`Hallo, ${userName}!`);
   console.log('What number is missing in the progression?');
   for (let i = 0; i < 3; i += 1) {
     const beginArr = Math.round(Math.random() * 100);
@@ -39,4 +33,4 @@ const progression = () => {
 
   console.log(`Congratulations, ${userName}`);
 };
-progression();
+export default progression;
