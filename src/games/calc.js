@@ -8,7 +8,7 @@ const calc = () => {
   const oper = operators[random(0, 2)];
   const number1 = random(1, 99);
   const number2 = random(1, 99);
-  const question = number1 + oper + number2;
+  const question = `${number1} ` + `${oper} ` + `${number2}`;
 
   let result = '';
 
