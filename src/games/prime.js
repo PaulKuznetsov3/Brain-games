@@ -1,7 +1,7 @@
 import brainGames from '../index.js';
 import random from '../utilit.js';
 
-const description = `Answer 'yes' if given number is prime. Otherwise answer 'no'`;
+const description = `Answer "yes" if given number is prime. Otherwise answer "no"`;
 const prime = () => {
   let result = '';
   const question = random(1, 99);
