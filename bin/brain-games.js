@@ -1,7 +1,4 @@
 #!/usr/bin/env node
+import nameDialog from '../src/cli.js';
 
-import calc from './brain-calc.js';
-
-console.log('Welcome to the Brain Games!');
-
-calc();
+nameDialog();

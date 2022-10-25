@@ -1,27 +1,19 @@
+import brainGames from '../index.js';
+import random from '../utilit.js';
+
+const description = 'Answer "yes" if given number is prime. Otherwise answer "no"';
 const prime = () => {
-  console.log('Answer "yes" if given number is prime. Otherwise answer "no"');
-  for (let i = 0; i < 3; i += 1) {
-    let result = '';
-    let answer = '';
-    const number = Math.round(Math.random() * 100);
-    console.log(`Question: ${number}`);
-    answer = readlineSync.question('Your answer: ');
-    for (let j = number - 1; j > 1; j -= 1) {
-      if (number % j !== 0) {
-        result = 'yes';
-      } else {
-        result = 'no';
-      }
-    }
-    if (result === answer) {
-      console.log('Correct!');
-    }
-    if (result !== answer) {
-      console.log(`${answer} is wrong answer ;(. Correct answer was ${result}`);
-      console.log(`Let's try again, ${userName}!`);
-      return;
+  let result = '';
+  const question = random(1, 99);
+  for (let j = question - 1; j > 1; j -= 1) {
+    if (question % j !== 0) {
+      result = 'yes';
+    } else {
+      result = 'no';
     }
   }
-  console.log(`Congratulations, ${userName}`);
+
+  return [question, String(result)];
 };
+brainGames(description, prime);
 export default prime;
