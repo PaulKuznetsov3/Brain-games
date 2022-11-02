@@ -12,7 +12,7 @@ const isPrime = (number) => {
   return true;
 };
 
-const prime = () => {
+const getQuestionAndAnswer = () => {
   let result = '';
   const question = random(1, 99);
   if (isPrime(question) === true) {
@@ -23,5 +23,5 @@ const prime = () => {
   return [question, String(result)];
 };
 
-brainGames(description, prime);
-export default prime;
+brainGames(description, getQuestionAndAnswer);
+export default getQuestionAndAnswer;

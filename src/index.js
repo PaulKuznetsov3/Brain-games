@@ -6,7 +6,7 @@ const brainGames = (description, answeAndQuestion) => {
   const userName = readlineSync.question('May I have your name? ');
   console.log(`Hello, ${userName}!`);
   console.log(description);
-  for (let i = 0; i < 3; i += 1) {
+  for (let countRounds = 0; countRounds < 3; countRounds += 1) {
     const [question, result] = answeAndQuestion();
     console.log(`Question: ${question}`);
     const answer = readlineSync.question('Your answer: ');

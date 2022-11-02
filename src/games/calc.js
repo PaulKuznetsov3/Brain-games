@@ -4,10 +4,14 @@ import random from '../utilit.js';
 
 const description = 'What is the result of the expression?';
 const operators = ['+', '-', '*'];
-const calc = () => {
-  const oper = operators[random(0, 2)];
-  const number1 = random(1, 99);
-  const number2 = random(1, 99);
+const randOper = () => operators[random(0, 2)];
+const randNum1 = () => random(1, 99);
+const randNum2 = () => random(1, 99);
+
+const getQuestionAndAnswer = () => {
+  const oper = randOper();
+  const number1 = randNum1();
+  const number2 = randNum2();
   const question = `${number1} ${oper} ${number2}`;
 
   let result = '';
@@ -26,5 +30,5 @@ const calc = () => {
   }
   return [question, String(result)];
 };
-export default calc;
-brainGames(description, calc);
+export default getQuestionAndAnswer;
+brainGames(description, getQuestionAndAnswer);

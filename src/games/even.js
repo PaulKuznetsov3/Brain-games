@@ -4,16 +4,22 @@ import brainGames from '../index.js';
 import random from '../utilit.js';
 
 const description = 'Answer "yes" if the number is even, otherwise answer "no"';
-const even = () => {
+const even = (number) => {
+  if (number % 2 === 0) {
+    return true;
+  }
+  return false;
+};
+const getQuestionAndAnswer = () => {
   const question = random(1, 99);
   let result;
-  if (question % 2 === 0) {
+  if (even(question) === true) {
     result = 'yes';
   }
-  if (question % 2 !== 0) {
+  if (even(question) === false) {
     result = 'no';
   }
   return [question, result];
 };
-brainGames(description, even);
-export default even;
+brainGames(description, getQuestionAndAnswer);
+export default getQuestionAndAnswer;
