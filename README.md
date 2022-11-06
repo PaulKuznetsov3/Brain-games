@@ -14,16 +14,7 @@ Hello, Sam!
 Games:
 1. brain-even: Answer "yes" if the number is even, otherwise answer "no" 
 start: brain-even
-
-Answer "yes" if the number is even, otherwise answer "no"
-Question: 32
-Your answer: yes
-Correct!
-Question: 31
-Your answer: yes 
-yes is wrong answer ;(. Correct answer was no
-Let's try again, Sam!
-
+<script src=" https://asciinema.org/a/RwbpwsalKI0RJ7olrSGH8oCbN" id="asciicast-14" async></script>
     https://asciinema.org/a/RwbpwsalKI0RJ7olrSGH8oCbN
     
 2. brain-calc: What is the result of the expression?

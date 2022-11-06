@@ -1,5 +1,5 @@
 import brainGames from '../index.js';
-import random from '../utilit.js';
+import getRandomNumber from '../utilit.js';
 
 const description = 'Answer "yes" if given number is prime. Otherwise answer "no"';
 
@@ -13,14 +13,10 @@ const isPrime = (number) => {
 };
 
 const getQuestionAndAnswer = () => {
-  let result = '';
-  const question = random(1, 99);
-  if (isPrime(question) === true) {
-    result = 'yes';
-  } else {
-    result = 'no';
-  }
-  return [question, String(result)];
+  const question = getRandomNumber(1, 99);
+  const currentAnswer = isPrime(question) ? 'yes' : 'no';
+
+  return [question, String(currentAnswer)];
 };
 
 brainGames(description, getQuestionAndAnswer);

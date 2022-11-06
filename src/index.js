@@ -6,16 +6,17 @@ const brainGames = (description, answeAndQuestion) => {
   const userName = readlineSync.question('May I have your name? ');
   console.log(`Hello, ${userName}!`);
   console.log(description);
-  for (let countRounds = 0; countRounds < 3; countRounds += 1) {
-    const [question, result] = answeAndQuestion();
+  const countRounds = 3;
+  for (let i = 0; i < countRounds; i += 1) {
+    const [question, currentAnswer] = answeAndQuestion();
     console.log(`Question: ${question}`);
     const answer = readlineSync.question('Your answer: ');
 
-    if (result === answer) {
+    if (currentAnswer === answer) {
       console.log('Correct!');
     }
-    if (result !== answer) {
-      console.log(`${answer} is wrong answer ;(. Correct answer was ${result}`);
+    if (currentAnswer !== answer) {
+      console.log(`${answer} is wrong answer ;(. Correct answer was ${currentAnswer}`);
       console.log(`Let's try again, ${userName}!`);
       return;
     }
