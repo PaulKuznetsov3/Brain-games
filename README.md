@@ -2,11 +2,7 @@
 [![Actions Status](https://github.com/PaulKuznetsov3/frontend-project-44/workflows/hexlet-check/badge.svg)](https://github.com/PaulKuznetsov3/frontend-project-44/actions)
 
 ## Установка:
-   make install- установить зависимости
-
-## Запуск игр:
-    brain-games
-
+   sudo npm link- установить brain-games
 
 ## Игры:
 ### 1. brain-even: Answer "yes" if the number is even, otherwise answer "no" 

@@ -1,5 +1,5 @@
 import brainGames from '../index.js';
-import getRandomNumber from '../utilit.js';
+import getRandomNumber from '../utils.js';
 
 const description = 'Find the greatest common divisor of given numbers';
 
@@ -23,5 +23,9 @@ const getQuestionAndAnswer = () => {
 
   return [question, String(currentAnswer)];
 };
-export default getQuestionAndAnswer;
-brainGames(description, getQuestionAndAnswer);
+export default () => {
+  brainGames(
+    description,
+    getQuestionAndAnswer,
+  );
+};

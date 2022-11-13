@@ -1,10 +1,8 @@
 import brainGames from '../index.js';
-import getRandomNumber from '../utilit.js';
+import getRandomNumber from '../utils.js';
 
 const description = 'What number is missing in the progression?';
-const getProgression = () => {
-  const beginArr = getRandomNumber(1, 99);
-  const step = getRandomNumber(1, 5);
+const getProgression = (step, beginArr) => {
   const arr = [];
   const length = step * 10;
   for (let j = 0; j <= length; j += step) {
@@ -14,14 +12,21 @@ const getProgression = () => {
 };
 
 const getQuestionAndAnswer = () => {
-  const arr = getProgression();
+  const beginArr = getRandomNumber(1, 99);
+  const step = getRandomNumber(1, 5);
+  const arr = getProgression(step, beginArr);
 
-  const rand = Math.floor(Math.random() * getProgression().length);
+  const rand = Math.floor(Math.random() * getProgression(step, beginArr).length);
   const currentAnswer = arr[rand];
   arr[rand] = '..';
   const question = `${arr.join(' ')}`;
 
   return [question, String(currentAnswer)];
 };
-brainGames(description, getQuestionAndAnswer);
-export default getQuestionAndAnswer;
+
+export default () => {
+  brainGames(
+    description,
+    getQuestionAndAnswer,
+  );
+};

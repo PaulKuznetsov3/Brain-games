@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 import brainGames from '../index.js';
-import getRandomNumber from '../utilit.js';
+import getRandomNumber from '../utils.js';
 
 const description = 'Answer "yes" if the number is even, otherwise answer "no"';
 const isEven = (number) => {
@@ -16,5 +16,9 @@ const getQuestionAndAnswer = () => {
 
   return [question, currentAnswer];
 };
-brainGames(description, getQuestionAndAnswer);
-export default getQuestionAndAnswer;
+export default () => {
+  brainGames(
+    description,
+    getQuestionAndAnswer,
+  );
+};

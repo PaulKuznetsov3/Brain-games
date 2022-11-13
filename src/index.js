@@ -1,12 +1,12 @@
 #!/usr/bin/env node
 import readlineSync from 'readline-sync';
 
+const countRounds = 3;
 const brainGames = (description, answeAndQuestion) => {
   console.log('Welcome to the Brain Games!');
   const userName = readlineSync.question('May I have your name? ');
   console.log(`Hello, ${userName}!`);
   console.log(description);
-  const countRounds = 3;
   for (let i = 0; i < countRounds; i += 1) {
     const [question, currentAnswer] = answeAndQuestion();
     console.log(`Question: ${question}`);

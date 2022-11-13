@@ -1,39 +1,39 @@
 #!/usr/bin/env node
 import brainGames from '../index.js';
-import getRandomNumber from '../utilit.js';
+import getRandomNumber from '../utils.js';
 
 const description = 'What is the result of the expression?';
 const operators = ['+', '-', '*'];
-let number1;
-let number2;
-let oper;
-let currentAnswer = '';
-const getRandomOperationSymbol = () => {
-  oper = operators[getRandomNumber(0, 2)];
-  number1 = getRandomNumber(1, 99);
-  number2 = getRandomNumber(1, 99);
+
+const getRandomOperationSymbol = (symbols) => {
+  const randomIndex = getRandomNumber(0, symbols.length - 1);
+  const randomSymbol = symbols[randomIndex];
+  return randomSymbol;
 };
 
-const isCalculate = () => {
+const calculate = (number1, oper, number2) => {
   switch (oper) {
     case '+':
-      currentAnswer = number1 + number2;
-      break;
+      return number1 + number2;
     case '-':
-      currentAnswer = number1 - number2;
-      break;
+      return number1 - number2;
     case '*':
-      currentAnswer = number1 * number2;
-      break;
-    default: currentAnswer = 'oops!';
+      return number1 * number2;
+    default: return 'oops!';
   }
 };
 
 const getQuestionAndAnswer = () => {
-  getRandomOperationSymbol();
+  const oper = getRandomOperationSymbol(operators);
+  const number1 = getRandomNumber(1, 99);
+  const number2 = getRandomNumber(1, 99);
   const question = `${number1} ${oper} ${number2}`;
-  isCalculate(number1, oper, number2);
+  const currentAnswer = calculate(number1, oper, number2);
   return [question, String(currentAnswer)];
 };
-export default getQuestionAndAnswer;
-brainGames(description, getQuestionAndAnswer);
+export default () => {
+  brainGames(
+    description,
+    getQuestionAndAnswer,
+  );
+};
