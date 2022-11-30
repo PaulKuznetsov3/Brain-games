@@ -1,5 +1,3 @@
-#!/usr/bin/env node
-
 import brainGames from '../index.js';
 import getRandomNumber from '../utils.js';
 
